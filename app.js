@@ -13,10 +13,10 @@ const { isActiveRoute } = require('./server/helpers/routeHelpers');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const dbURI = `mongodb+srv://vovasvidi:${process.env.dbPass}@cluster69.0nfk51j.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const dbURI = `mongodb+srv://vovasvidi:${process.env.dbPass}@cluster69.0nfk51j.mongodb.net/${process.env.dbName}?retryWrites=true&w=majority`;
 
 // Connect to DB
-connectDB();
+connectDB(dbURI);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
