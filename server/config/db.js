@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const dbURI = `mongodb+srv://vovasvidi:${process.env.dbPass}@cluster69.0nfk51j.mongodb.net/?retryWrites=true&w=majority`;
+const dbURI = `mongodb+srv://vovasvidi:${process.env.dbPass}@cluster69.0nfk51j.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 const connectDB = async () => {
   try {
     mongoose.set('strictQuery', false);
