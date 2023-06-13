@@ -243,4 +243,12 @@ router.get('/logout', (req, res) => {
   res.redirect('/');
 });
 
+/**
+ * GET /
+ * Admin Logout
+ */
+router.get('/admin/email-preview', (req, res) => {
+  res.render('admin/edit-post');
+});
+
 module.exports = router;
