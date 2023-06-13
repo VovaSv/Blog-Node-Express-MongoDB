@@ -10,7 +10,7 @@ const transport = nodemailer.createTransport({
 });
 
 const sendEmail = (
-  receiver = 'vladimis@gmail.com',
+  receiver = 'vladimis@amdocs.com',
   subject = 'Test Email',
   content = 'Email Content'
 ) => {
