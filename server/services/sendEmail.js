@@ -14,24 +14,33 @@ const transport = nodemailer.createTransport({
 });
 
 const sendEmail = (
-  receiver = 'vladimis@amdocs.com',
-  subject = 'Test Email',
-  content = 'Email Content'
+  receiverEmail = 'vladimis@amdocs.com',
+  subject = 'This is a Email Verification From My Heart',
+  content = 'Eto tebe pizdiuk bil poslan etot Email, but dobr proverit ego...',
+  receiverName = 'Pizdiuk'
 ) => {
   //console.log('process.cwd(): ', process.cwd());
 
   ejs.renderFile(
     path.resolve('views/templates/email/index.ejs'),
-    { receiver, content },
+    { receiver, content, receiverName },
     (err, data) => {
       if (err) {
         console.log(err);
       } else {
         var mailOptions = {
           from: 'beba@gmail.com',
-          to: receiver,
+          to: `${receiverEmail}, vladimis@amdocs.com, palkin.andrew@gmail.com`,
           subject: subject,
           html: data,
+          attachments: [
+            // String attachment
+            {
+              filename: 'notes.txt',
+              content: 'This is very secured info from My Heaer',
+              contentType: 'text/plain', // optional, would be detected from the filename
+            },
+          ],
         };
 
         transport.sendMail(mailOptions, (error, info) => {
