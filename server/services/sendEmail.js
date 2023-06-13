@@ -15,7 +15,7 @@ const sendEmail = (
   content = 'Email Content'
 ) => {
   ejs.renderFile(
-    __dirname + '/views/templates/email/index.ejs',
+    '/views/templates/email/index.ejs',
     { receiver, content },
     (err, data) => {
       if (err) {
