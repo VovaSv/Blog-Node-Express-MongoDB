@@ -12,7 +12,7 @@ router.get('', (req, res) => {
   }
 });
 
-router.get('/v1/verifications/email/request', (req, res) => {
+router.get('/v1/verifications/email/request', async (req, res) => {
   try {
     // (receiverName, receiverEmail, subject, content)
     await sendEmail(
