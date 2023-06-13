@@ -15,20 +15,10 @@ const sendEmail = (
   subject = 'Test Email',
   content = 'Email Content'
 ) => {
-  console.log('dirname: ', __dirname);
-  const rootPath = path.resolve(__dirname, '..');
-  console.log('rootPath: ', rootPath);
-  console.log('process.cwd(): ', process.cwd());
-  console.log(
-    'pathResolveWithSlash: ',
-    path.resolve('/views/templates/email/index.ejs')
-  );
-  console.log(
-    'pathResolveWithoutSlash: ',
-    path.resolve('views/templates/email/index.ejs')
-  );
+  //console.log('process.cwd(): ', process.cwd());
+
   ejs.renderFile(
-    '/views/templates/email/index.ejs',
+    path.resolve('views/templates/email/index.ejs'),
     { receiver, content },
     (err, data) => {
       if (err) {
