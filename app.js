@@ -40,7 +40,7 @@ app.use(express.static('public'));
 // Templating Engine
 app.use(expressLayout);
 app.set('layout', './layouts/main');
-app.set('layout.admin', './layouts/admin');
+//app.set('layout.admin', './layouts/admin'); - How set layout for entire admin scope
 app.set('view engine', 'ejs');
 
 app.locals.isActiveRoute = isActiveRoute;
