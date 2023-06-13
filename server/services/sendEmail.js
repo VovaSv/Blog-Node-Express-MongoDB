@@ -18,6 +18,15 @@ const sendEmail = (
   console.log('dirname: ', __dirname);
   const rootPath = path.resolve(__dirname, '..');
   console.log('rootPath: ', rootPath);
+  console.log('process.cwd(): ', process.cwd());
+  console.log(
+    'pathResolveWithSlash: ',
+    path.resolve('/views/templates/email/index.ejs')
+  );
+  console.log(
+    'pathResolveWithoutSlash: ',
+    path.resolve('views/templates/email/index.ejs')
+  );
   ejs.renderFile(
     '/views/templates/email/index.ejs',
     { receiver, content },
