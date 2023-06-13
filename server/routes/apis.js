@@ -14,13 +14,20 @@ router.get('', (req, res) => {
 
 router.get('/v1/verifications/email/request', (req, res) => {
   try {
-    sendEmail();
-    res.status(201).json({ message: 'Connected Good' });
+    // (receiverName, receiverEmail, subject, content)
+    await sendEmail(
+      'ToVova',
+      'vladimis@amdocs.com',
+      'Subject Title',
+      'Email Content HERE'
+    );
+    res.status(201).json({ message: 'Email was sent successufully' });
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({ message: 'Internal server error from Vovas Server' });
+    res.status(500).json({
+      message:
+        'Internal server error from Vovas Server, Email was not sent please check logs',
+    });
   }
 });
 
