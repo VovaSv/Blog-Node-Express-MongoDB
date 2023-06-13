@@ -17,6 +17,7 @@ router.get('/v1/verifications/email/request', (req, res) => {
     sendEmail();
     res.status(201).json({ message: 'Connected Good' });
   } catch (error) {
+    console.log(error);
     res
       .status(500)
       .json({ message: 'Internal server error from Vovas Server' });
