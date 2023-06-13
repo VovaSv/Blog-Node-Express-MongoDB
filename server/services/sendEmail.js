@@ -15,7 +15,7 @@ const transport = nodemailer.createTransport({
 
 // Create a function to render the email body
 const renderEmailBody = async (receiverName, content) => {
-  const html = await view.renderFile(
+  const html = await ejs.renderFile(
     path.resolve('views/templates/email/index.ejs'),
     { receiverName, content }
   );
