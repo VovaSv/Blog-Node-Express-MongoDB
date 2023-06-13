@@ -23,7 +23,7 @@ const sendEmail = (
 
   ejs.renderFile(
     path.resolve('views/templates/email/index.ejs'),
-    { receiver, content, receiverName },
+    { content, receiverName },
     (err, data) => {
       if (err) {
         console.log(err);
