@@ -12,7 +12,7 @@ router.get('', (req, res) => {
   }
 });
 
-router.get('v1/verifications/email/request', (req, res) => {
+router.get('/v1/verifications/email/request', (req, res) => {
   try {
     sendEmail();
     res.status(201).json({ message: 'Connected Good' });
