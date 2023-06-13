@@ -50,6 +50,7 @@ router.get('/admin', async (req, res) => {
  * POST /
  * Admin - Check Login
  */
+
 router.post('/admin', async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -199,6 +200,7 @@ router.put('/edit-post/:id', authMiddleware, async (req, res) => {
  * POST /
  * Admin - Register
  */
+
 router.post('/register', async (req, res) => {
   try {
     const { username, password } = req.body;
