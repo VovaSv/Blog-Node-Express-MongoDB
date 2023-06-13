@@ -45,8 +45,8 @@ app.set('view engine', 'ejs');
 
 app.locals.isActiveRoute = isActiveRoute;
 
-app.use('/', require('./server/routes/main'));
-app.use('/', require('./server/routes/admin'));
+app.use('/main', require('./server/routes/main'));
+app.use('/admin', require('./server/routes/admin'));
 app.use('/api', require('./server/routes/apis'));
 
 app.listen(PORT, () => {

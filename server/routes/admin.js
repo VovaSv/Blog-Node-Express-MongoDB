@@ -153,7 +153,7 @@ router.get('/edit-post/:id', authMiddleware, async (req, res) => {
 
     const data = await Post.findOne({ _id: req.params.id });
 
-    res.render('admin/edit-post', {
+    res.render('edit-post', {
       locals,
       data,
       layout: adminLayout,
@@ -247,7 +247,7 @@ router.get('/logout', (req, res) => {
  * GET /
  * Admin Logout
  */
-router.get('/admin/email-preview', (req, res) => {
+router.get('/email-preview', (req, res) => {
   res.render('templates/email/email-preview');
 });
 
