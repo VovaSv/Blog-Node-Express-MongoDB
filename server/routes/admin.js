@@ -8,6 +8,22 @@ const jwt = require('jsonwebtoken');
 const adminLayout = '../views/layouts/admin';
 const jwtSecret = process.env.JWT_SECRET;
 
+/* How set admin layout for /admin route by use middleware
+// AdminRoutes.js
+const router = express.Router();
+
+router.use((req, res, next) => {
+    // changing layout for my admin panel
+    req.app.set('layout', 'layouts/admin');
+    next();
+});
+
+router.get('/', (req, res) => {
+   res.render('admin/index'); // will use admin layout
+});
+
+*/
+
 /**
  *
  * Check Login
@@ -248,7 +264,7 @@ router.get('/logout', (req, res) => {
  * Admin Logout
  */
 router.get('/email-preview', (req, res) => {
-  res.render('templates/email/email-preview');
+  res.render('templates/email/email-preview', { layout: false });
 });
 
 module.exports = router;
