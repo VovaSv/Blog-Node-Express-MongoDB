@@ -248,7 +248,7 @@ router.get('/logout', (req, res) => {
  * Admin Logout
  */
 router.get('/admin/email-preview', (req, res) => {
-  res.render('admin/edit-post');
+  res.render('templates/email/email-preview');
 });
 
 module.exports = router;
