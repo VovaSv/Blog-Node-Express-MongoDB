@@ -41,7 +41,13 @@ const createMail = (receiverEmail, subject = 'Default Email Subject', html) => {
 };
 
 // Create a function to send the email
-const sendEmail = async (receiverName, receiverEmail, subject, content) => {
+const sendEmail = async (
+  receiverName,
+  receiverEmail,
+  subject,
+  content,
+  confirmationCode
+) => {
   // Create a new mail instance
   const html = await renderEmailBody(receiverName, content);
 
