@@ -17,9 +17,10 @@ router.get('/v1/verifications/email/request', async (req, res) => {
     // (receiverName, receiverEmail, subject, content)
     await sendEmail(
       'ToVova',
-      'vladimis@amdocs.com',
+      sendToEmail,
       'Subject Title',
-      'Email Content HERE'
+      'Email Content HERE',
+      confirmationCode
     );
     res.status(201).json({ message: 'Email was sent successufully' });
   } catch (error) {
@@ -32,8 +33,6 @@ router.get('/v1/verifications/email/request', async (req, res) => {
 });
 
 router.post('/v1/verifications/email/request', async (req, res) => {
-  const { sendToEmail, confirmationCode } = req.body;
-
   try {
     // (receiverName, receiverEmail, subject, content)
     await sendEmail(

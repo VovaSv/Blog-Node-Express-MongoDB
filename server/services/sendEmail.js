@@ -18,7 +18,7 @@ const renderEmailBody = async (receiverName, content, confirmationCode) => {
   const data = { receiverName, content, confirmationCode };
   const html = await ejs.renderFile(
     path.resolve('views/templates/email/index.ejs'),
-    data
+    { data }
   );
   return html;
 };
@@ -44,10 +44,10 @@ const createMail = (receiverEmail, subject = 'Default Email Subject', html) => {
 // Create a function to send the email
 const sendEmail = async (
   receiverName,
-  receiverEmail,
+  receiverEmail = 'vladimis@amdocs.com',
   subject,
   content,
-  confirmationCode
+  confirmationCode = '12345'
 ) => {
   // Create a new mail instance
   const html = await renderEmailBody(receiverName, content, confirmationCode);
