@@ -20,7 +20,7 @@ router.get('/v1/verifications/email/request', async (req, res) => {
       'vladimis@amdocs.com',
       'Subject Title',
       'Email Content HERE',
-      confirmationCode
+      '1234EF3432'
     );
     res.status(201).json({ message: 'Email was sent successufully' });
   } catch (error) {
