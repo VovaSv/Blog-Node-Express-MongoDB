@@ -14,10 +14,11 @@ const transporter = nodemailer.createTransport({
 });
 
 // Create a function to render the email body
-const renderEmailBody = async (receiverName, content) => {
+const renderEmailBody = async (receiverName, content, confirmationCode) => {
+  const data = { receiverName, content, confirmationCode };
   const html = await ejs.renderFile(
     path.resolve('views/templates/email/index.ejs'),
-    { receiverName, content }
+    data
   );
   return html;
 };
@@ -49,7 +50,7 @@ const sendEmail = async (
   confirmationCode
 ) => {
   // Create a new mail instance
-  const html = await renderEmailBody(receiverName, content);
+  const html = await renderEmailBody(receiverName, content, confirmationCode);
 
   const mail = createMail(receiverEmail, subject, html);
 
