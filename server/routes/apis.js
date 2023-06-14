@@ -17,7 +17,7 @@ router.get('/v1/verifications/email/request', async (req, res) => {
     // (receiverName, receiverEmail, subject, content)
     await sendEmail(
       'ToVova',
-      sendToEmail,
+      'vladimis@amdocs.com',
       'Subject Title',
       'Email Content HERE',
       confirmationCode
